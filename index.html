@@ -30,14 +30,17 @@
       <section id="main_content">
         <h3>How do I get it?</h3>
 
-<p>The easiest way to get EMStudio is to download the source from the repository and compile it yourself:</p>
-
+<p>The easiest way to get EMStudio is to download the source from the repository and compile it yourself. A few packages are needed to compile it. In ubuntu:</p>
+<pre><code>$ sudo apt-get update
+$ sudo apt-get install libqt4-dev libqt4-opengl-dev qt4-qmake libqwt-dev libqt4-declarative libqjson-dev</code></pre>
+<p>Once this has completed (or the equivalant packages on your own distro), you can then clone the repository and build it. It has been mentioned before to run qmake -project, NEVER EVER EVER DO THIS!. This will break things. To checkout and build:</p>
 <pre><code>$ git clone https://github.com/malcom2073/emstudio.git
 $ cd emstudio
 $ qmake
 $ make
 </code></pre>
 
+<p>There are two main branches that are typically available. master, and fredtest. Please run master, as that is where I will accept bugreports from.</p>
 <p>Once it has compiled, it will be available to run via emstudio binary in the main directory. There are also precompiled windows installers, that are in no way garunteed to work, since they pull from master for each commit. These are available at <a href="http://mikesshop.net/EMStudio">http://mikesshop.net/EMStudio</a>. You may need the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5555">MSVC++ 2010 runtime</a> to run these.</p>
 
 <h3>What can it do?</h3>

@@ -30,25 +30,23 @@
       <section id="main_content">
         <h3>How do I get it?</h3>
 
-<p>The easiest way to get EMStudio is to download the source from the repository and compile it yourself. A few packages are needed to compile it. In ubuntu:</p>
-<pre><code>$ sudo apt-get update
-$ sudo apt-get install libqt4-dev libqt4-opengl-dev libqt4-opengl-dev qt4-qmake libqwt-dev libqt4-declarative libqjson-dev</code></pre>
-<p>Once this has completed (or the equivalant packages on your own distro), you can then clone the repository and build it. It has been mentioned before to run qmake -project, NEVER EVER EVER DO THIS!. This will break things. To checkout and build:</p>
-<pre><code>$ git clone https://github.com/malcom2073/emstudio.git
-$ cd emstudio
-$ qmake
-$ make
-</code></pre>
+<p>The easiest way to get EMStudio is to download it from the continuous build server. There are several versions available on the server.</p>
+* Master (semi-stable) Builds: These builds should be used if you want a stable, working, tested release.<br><br>
+* Dev (Totally unstable) builds: These builds should be used if you would like to help in testing, or want bleeding edge features
+<br><br>
 
-<p>There are two main branches that are typically available. master, and fredtest. Please run master, as that is where I will accept bugreports from.</p>
-<p>Once it has compiled, it will be available to run via emstudio binary in the main directory. There are also precompiled windows installers, that are in no way garunteed to work, since they pull from master for each commit. These are available at <a href="http://mikesshop.net/EMStudio">http://mikesshop.net/EMStudio</a>. You may need the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=5555">MSVC++ 2010 runtime</a> to run these.</p>
+<h3>Build from source</h3>
+<p>To build from source, please refer to the build instructions contained in the readme file: https://github.com/malcom2073/emstudio/blob/master/README.md</p>
+
 
 <h3>What can it do?</h3>
 
 <p>EMStudio is a work in progress. As such, its feature list is slightly limited as of now. Currently, it can:<br>
- * Display datalog data via gauges, or text table<br>
- * Load, edit, and write raw hex RAM memory locations or 2D tables<br>
+ * Display live data from a FreeEMS ecu via gauges, tables, or live map following<br>
+ * Load, edit, and write raw hex RAM memory locations, 2d and 3d tables<br>
  * Show ECU Flags<br>
+ * Load, edit, and save data offline, for editing when you're not connected to an ECU<br>
+ * Seamlessly handle transitions from online->offline->online, to make for a smooth feel when moving between the vehicle, and the workbench<br>
  * Look Awesome<br>
 </p>
 

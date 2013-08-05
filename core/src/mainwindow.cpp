@@ -280,6 +280,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	emsMdiWindow->hide();
 	emsMdiWindow->setWindowTitle(emsInfo->windowTitle());
 
+	parameterView = new ParameterView();
+	parameterMdiWindow = ui.mdiArea->addSubWindow(parameterView);
+	parameterMdiWindow->setGeometry(parameterView->geometry());
+	parameterMdiWindow->hide();
+	parameterMdiWindow->setWindowTitle(parameterView->windowTitle());
+
 	aboutView = new AboutView();
 	aboutView->setHash(define2string(GIT_HASH));
 	aboutView->setCommit(define2string(GIT_COMMIT));
@@ -894,6 +900,8 @@ void MainWindow::setPlugin(QString plugin)
 	}
 	m_memoryMetaData = emsComms->getMetaParser();
 	m_memoryMetaData->loadMetaDataFromFile(filestr);
+	parameterView->passConfigBlockList(m_memoryMetaData->configMetaData());
+	parameterView->passMenuList(m_memoryMetaData->menuMetaData());
 	emsData->setMetaData(m_memoryMetaData);
 	qDebug() << m_memoryMetaData->errorMap().keys().size() << "Error Keys Loaded";
 	qDebug() << m_memoryMetaData->table3DMetaData().size() << "3D Tables Loaded";

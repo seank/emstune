@@ -50,7 +50,7 @@
 #include "tablemap3d.h"
 #include "serialportstatus.h"
 #include <QPluginLoader>
-
+#include "parameterview.h"
 class RawDataBlock
 {
 public:
@@ -120,6 +120,11 @@ private:
 	QMdiSubWindow *packetStatusMdiWindow;
 	QMdiSubWindow *aboutMdiWindow;
 	QMdiSubWindow *emsStatusMdiWindow;
+
+	ParameterView *parameterView;
+	QMdiSubWindow *parameterMdiWindow;
+
+	//QFile *settingsFile;
 	void checkMessageCounters(int sequencenumber);
 	void populateParentLists();
 	DataPacketDecoder *dataPacketDecoder;

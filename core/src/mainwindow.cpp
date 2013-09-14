@@ -29,12 +29,13 @@
 #include <tableview2d.h>
 #include <qjson/parser.h>
 #include "logloader.h"
-
+#include "wizardview.h"
 #define define2string_p(x) #x
 #define define2string(x) define2string_p(x)
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
+
 	m_offlineMode = false;
 	m_checkEmsDataInUse = false;
 	m_currentEcuClock = -1;
@@ -1813,6 +1814,9 @@ void MainWindow::emsOperatingSystem(QString os)
 
 void MainWindow::emsCommsConnected()
 {
+	WizardView *view = new WizardView(emsComms);
+	view->setGeometry(0,0,400,300);
+	view->show();
 	//New log and settings file here.
 	if (m_memoryInfoMap.size() == 0)
 	{

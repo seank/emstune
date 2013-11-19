@@ -728,7 +728,7 @@ bool FreeEmsComms::sendPacket(unsigned short payloadid,QList<QVariant> arglist,Q
 	{
 		return false;
 	}
-	QLOG_TRACE() << "Sent packet" << "0x" + QString::number(payloadid,16).toUpper();
+	//QLOG_TRACE() << "Sent packet" << "0x" + QString::number(payloadid,16).toUpper();
 	emit packetSent(payloadid,header,payload);
 	return true;
 }
